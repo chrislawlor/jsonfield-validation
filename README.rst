@@ -3,18 +3,33 @@ Django JSON Schema Field Validator
 ==================================
 
 
+JSON Schema validation for Django JSONField.
 
 
+Quickstart
+----------
+
+Installation
+++++++++++++
+
+.. code:: bash
+
+    pip install jsonfield-validator
+
+Usage
++++++
+
+.. code:: python
+
+    from jsonfield_validator import JsonSchemaValidator
 
 
-Validator class for Django model JSON fields.
-
-
-
-Features
---------
-
-* TODO
+    class MyModel(models.Model):
+        items = models.JSONField(
+            validators=[
+                JsonSchemaValidator({"maxItems": 2)
+            ]
+        )
 
 Credits
 -------
