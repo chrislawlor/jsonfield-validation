@@ -7,7 +7,7 @@ Submodules
 jsonschema\_validator.validator module
 --------------------------------------
 
-.. automodule:: jsonfield_validator.validator
+.. automodule:: jsonfield_validation.validator
    :members:
    :undoc-members:
    :show-inheritance:
@@ -15,7 +15,7 @@ jsonschema\_validator.validator module
 Module contents
 ---------------
 
-.. automodule:: jsonfield_validator
+.. automodule:: jsonfield_validation
    :members:
    :undoc-members:
    :show-inheritance:

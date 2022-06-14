@@ -4,7 +4,7 @@
 # You can set these variables from the command line.
 SPHINXOPTS    =
 SPHINXBUILD   = python -msphinx
-SPHINXPROJ    = jsonfield_validator
+SPHINXPROJ    = jsonfield_validation
 SOURCEDIR     = .
 BUILDDIR      = _build
 

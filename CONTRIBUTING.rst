@@ -15,7 +15,7 @@ Types of Contributions
 Report Bugs
 ~~~~~~~~~~~
 
-Report bugs at https://github.com/chrislawlor/jsonfield-validator/issues.
+Report bugs at https://github.com/chrislawlor/jsonfield-validation/issues.
 
 If you are reporting a bug, please include:
 
@@ -45,7 +45,7 @@ articles, and such.
 Submit Feedback
 ~~~~~~~~~~~~~~~
 
-The best way to send feedback is to file an issue at https://github.com/chrislawlor/jsonfield_validator/issues.
+The best way to send feedback is to file an issue at https://github.com/chrislawlor/jsonfield_validation/issues.
 
 If you are proposing a feature:
 
@@ -57,12 +57,12 @@ If you are proposing a feature:
 Get Started!
 ------------
 
-Ready to contribute? Here's how to set up `jsonfield_validator` for local development.
+Ready to contribute? Here's how to set up `jsonfield_validation` for local development.
 
-1. Fork the `jsonfield_validator` repo on GitHub.
+1. Fork the `jsonfield_validation` repo on GitHub.
 2. Clone your fork locally::
 
-    $ git clone git@github.com:your_name_here/jsonfield_validator.git
+    $ git clone git@github.com:your_name_here/jsonfield_validation.git
 
 3. Install your local copy into a virtualenv. Assuming you have tox_ installed, this is how you set up your fork for local development::
 
@@ -73,8 +73,8 @@ Ready to contribute? Here's how to set up `jsonfield_validator` for local develo
 
    Alternately, with virtualenvwrapper_:
 
-    $ mkvirtualenv jsonfield_validator
-    $ cd jsonfield_validator/
+    $ mkvirtualenv jsonfield_validation
+    $ cd jsonfield_validation/
     $ python setup.py develop
     $ python -m pip install -r requirements_dev.txt
 
@@ -116,7 +116,7 @@ Before you submit a pull request, check that it meets these guidelines:
    your new functionality into a function with a docstring, and add the
    feature to the list in README.rst.
 3. The pull request should work for Python 3.6, 3.7, 3.8, and 3.9. Check
-   https://travis-ci.com/chrislawlor/jsonfield_validator/pull_requests
+   https://travis-ci.com/chrislawlor/jsonfield_validation/pull_requests
    and make sure that the tests pass for all supported Python versions.
 
 Tips
@@ -124,7 +124,7 @@ Tips
 
 To run a subset of tests::
 
-$ pytest tests.test_jsonfield_validator
+$ pytest tests.test_jsonfield_validation
 
 
 Publishing

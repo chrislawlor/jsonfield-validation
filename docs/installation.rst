@@ -12,7 +12,7 @@ To install Django JSON Schema Field Validator, run this command in your terminal
 
 .. code-block:: console
 
-    $ pip install jsonfield-validator
+    $ pip install jsonfield-validation
 
 This is the preferred method to install Django JSON Schema Field Validator, as it will always install the most recent stable release.
 

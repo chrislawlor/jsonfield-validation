@@ -1,6 +1,6 @@
 import pytest
 
-from jsonfield_validator import JsonSchemaValidator
+from jsonfield_validation import JsonSchemaValidator
 from .app.models import SCHEMA
 
 

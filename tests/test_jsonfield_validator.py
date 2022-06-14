@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 
-"""Tests for `jsonfield_validator` package."""
+"""Tests for `jsonfield_validation` package."""
 
 import pytest
 
 from django.core.exceptions import ImproperlyConfigured, ValidationError
-from jsonfield_validator import JsonSchemaValidator
+from jsonfield_validation import JsonSchemaValidator
 
 
 def test_simple_validation(validator, valid_data):

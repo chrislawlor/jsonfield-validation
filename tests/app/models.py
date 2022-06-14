@@ -6,7 +6,7 @@ except ImportError:
     # For Django < 3.1
     from jsonfield import JSONField
 
-from jsonfield_validator import JsonSchemaValidator
+from jsonfield_validation import JsonSchemaValidator
 
 
 SCHEMA = {

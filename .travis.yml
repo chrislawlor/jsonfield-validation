@@ -29,5 +29,5 @@ deploy:
     skip_existing: true
     on:
         tags: true
-        repo: chrislawlor/jsonfield-validator
+        repo: chrislawlor/jsonfield-validation
         python: 3.9

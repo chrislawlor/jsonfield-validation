@@ -9,7 +9,7 @@ if "%SPHINXBUILD%" == "" (
 )
 set SOURCEDIR=.
 set BUILDDIR=_build
-set SPHINXPROJ=jsonfield_validator
+set SPHINXPROJ=jsonfield_validation
 
 if "%1" == "" goto help
 

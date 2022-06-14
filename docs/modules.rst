@@ -1,7 +1,7 @@
-jsonfield_validator
+jsonfield_validation
 ====================
 
 .. toctree::
    :maxdepth: 4
 
-   jsonfield_validator
+   jsonfield_validation

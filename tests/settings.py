@@ -11,3 +11,5 @@ INSTALLED_APPS = [
 ]
 
 SECRET_KEY = "itsasecret"
+
+USE_TZ = False

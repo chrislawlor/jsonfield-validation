@@ -29,7 +29,7 @@ help:
 clean: clean-build clean-pyc clean-test ## remove all build, test, coverage and Python artifacts
 
 format:
-	black jsonfield_validator tests
+	black jsonfield_validation tests
 
 clean-build: ## remove build artifacts
 	rm -fr build/
@@ -51,13 +51,13 @@ clean-test: ## remove test and coverage artifacts
 	rm -fr .pytest_cache
 
 lint/flake8: ## check style with flake8
-	flake8 jsonfield_validator tests
+	flake8 jsonfield_validation tests
 
 lint/black: ## check style with black
-	black --check jsonfield_validator tests
+	black --check jsonfield_validation tests
 
 lint/mypy: ## type check with mypy
-	mypy jsonfield_validator
+	mypy jsonfield_validation
 
 lint: lint/flake8 lint/black lint/mypy ## check style
 
@@ -68,15 +68,15 @@ test-all: ## run tests on every Python version with tox
 	tox -p
 
 coverage: ## check code coverage quickly with the default Python
-	coverage run --source jsonfield_validator -m pytest
+	coverage run --source jsonfield_validation -m pytest
 	coverage report -m
 	coverage html
 	$(BROWSER) htmlcov/index.html
 
 docs: ## generate Sphinx HTML documentation, including API docs
-	rm -f docs/jsonfield_validator.rst
+	rm -f docs/jsonfield_validation.rst
 	rm -f docs/modules.rst
-	sphinx-apidoc -o docs/ jsonfield_validator
+	sphinx-apidoc -o docs/ jsonfield_validation
 	$(MAKE) -C docs clean
 	$(MAKE) -C docs html
 	$(BROWSER) docs/_build/html/index.html

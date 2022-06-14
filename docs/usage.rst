@@ -7,7 +7,7 @@ Create a validator by passing a valid JSON schema to
 
 .. code:: python
 
-    from jsonfield_validator import JsonSchemaValidator
+    from jsonfield_validation import JsonSchemaValidator
 
     max2 = JsonSchemaValidator({"maxItems": 2})
 

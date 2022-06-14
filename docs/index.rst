@@ -1,5 +1,5 @@
 Welcome to Django JSON Schema Field Validator's documentation!
-======================================
+==============================================================
 
 .. toctree::
    :maxdepth: 2

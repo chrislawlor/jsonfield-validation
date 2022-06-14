@@ -2,6 +2,9 @@
 Django JSON Schema Field Validator
 ==================================
 
+.. image:: https://app.travis-ci.com/chrislawlor/jsonfield-validation.svg?branch=master
+    :target: https://app.travis-ci.com/chrislawlor/jsonfield-validation
+
 .. image:: https://readthedocs.org/projects/jsonfield-validation/badge/?version=latest
     :target: https://jsonfield-validation.readthedocs.io/en/latest/?badge=latest
     :alt: Documentation Status
@@ -17,14 +20,14 @@ Installation
 
 .. code:: bash
 
-    pip install jsonfield-validator
+    pip install jsonfield-validation
 
 Usage
 +++++
 
 .. code:: python
 
-    from jsonfield_validator import JsonSchemaValidator
+    from jsonfield_validation import JsonSchemaValidator
 
 
     class MyModel(models.Model):
