@@ -1,0 +1,14 @@
+black==21.10b0
+bump2version==1.0.1
+coverage==6.1.1
+flake8==4.0.1
+mypy==0.910
+pip==21.3.1
+pytest-django==4.5.2
+pytest==6.2.5
+PyYAML==6.0
+Sphinx==4.2.0
+tox==3.24.4
+twine==3.4.2
+watchdog==2.1.6
+wheel==0.37

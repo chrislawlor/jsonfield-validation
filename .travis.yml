@@ -1,0 +1,32 @@
+# Config file for automatic testing at travis-ci.com
+
+language: python
+python:
+    - 3.10
+    - 3.9
+    - 3.8
+    - 3.7
+
+branches:
+    only:
+        - master
+        - /v\d+\.\d+\.\d+/
+
+# Command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
+install: pip install -U tox-travis
+
+# Command to run tests, e.g. python setup.py test
+script: tox
+
+deploy:
+    provider: pypi
+    distributions: sdist bdist_wheel
+    username: $PYPI_USERNAME
+    password: $PYPI_PASSWORD
+    server: https://pypi.org/simple
+    edge: true
+    skip_existing: true
+    on:
+        tags: true
+        repo: chrislawlor/jsonfield-validator
+        python: 3.9

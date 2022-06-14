@@ -1,0 +1,30 @@
+default_language_version:
+    python: python3.8
+
+repos:
+    # Don't add Black yet, it will run on all files in the commit
+    # regardless of whether or not they are included in the pyproject.toml
+    # config file.
+    # -   repo: https://github.com/psf/black
+    #     rev: stable
+    #     hooks:
+    #     - id: black
+    - repo: https://github.com/pre-commit/pre-commit-hooks
+      rev: v4.0.1
+      hooks:
+          - id: trailing-whitespace
+            # See https://github.com/c4urself/bump2version/issues/124
+            exclude: setup.cfg
+          - id: check-merge-conflict
+          - id: end-of-file-fixer
+    - repo: local
+      hooks:
+          - id: black
+            name: Black
+            language: system
+            entry: make format
+
+          - id: flake8
+            name: Flake8
+            language: system
+            entry: make lint
