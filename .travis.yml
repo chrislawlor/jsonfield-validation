@@ -24,7 +24,6 @@ deploy:
     distributions: sdist bdist_wheel
     username: $PYPI_USERNAME
     password: $PYPI_PASSWORD
-    server: https://pypi.org/simple
     edge: true
     skip_existing: true
     on:
