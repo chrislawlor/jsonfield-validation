@@ -44,7 +44,7 @@ setup(
     packages=find_packages(include=["jsonfield_validation", "jsonfield_validation.*"]),
     test_suite="tests",
     tests_require=test_requirements,
-    url="https://github.com/chrislawlor/jsonfield_validation",
+    url="https://github.com/chrislawlor/jsonfield-validation",
     version="0.1.0",
     zip_safe=False,
 )
