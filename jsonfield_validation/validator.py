@@ -38,7 +38,7 @@ class JsonSchemaValidator:
             # so we set error_list as the list of errors, but also set
             # error_dict explicitly.
             # See https://code.djangoproject.com/ticket/29318
-            ve = ValidationError(list(errors.values()))
+            ve = ValidationError(self._errordict_to_list(errors))
             ve.error_dict = errors
             raise ve
 
@@ -78,6 +78,15 @@ class JsonSchemaValidator:
             key = key or "__non_field_errors__"
             errors[key].append(ve.message)
         return errors
+
+    @classmethod
+    def _errordict_to_list(cls, errordict: Dict[str, List[str]]) -> List[str]:
+        """
+        Flatten the error dict down to a list of strings by prepending
+        each error value with the error key.
+        """
+
+        return [f"{k}: {v}" for k, v in errordict.items()]
 
     @classmethod
     def _stringify_path_elements(cls, path: Iterable[Any]) -> List[str]:

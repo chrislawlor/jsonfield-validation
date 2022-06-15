@@ -56,3 +56,5 @@ def test_nested_path_array_error_representation():
         assert hasattr(ve, "error_dict")
         # Errors in array items are shown using index syntax
         assert "points.[1]" in ve.error_dict
+        # Error list entries contain the path to the invalid value
+        assert "points.[1]" in ve.error_list[0].message
