@@ -2,6 +2,9 @@
 Usage
 =====
 
+Validating JSONField
+--------------------
+
 Create a validator by passing a valid JSON schema to
 ``JsonSchemaValidator``:
 
@@ -26,6 +29,20 @@ if necessary:
 
     django.core.exceptions.ValidationError: {'items': ["[1, 2, 3] is too long"]}
 
+
+
+JSONField support
++++++++++++++++++
+
+``JsonSchemaValidator`` is tested against the JSONField
+implementation included in Django > 3.1, and
+against django-jsonfield_ for prior versions of Django.
+
+.. _django-jsonfield: https://pypi.org/project/django-jsonfield/
+
+
+Generating JSON schemas with Pydantic
+-------------------------------------
 
 Pydantic_ is a great fit for Django JSON Field Validator:
 
