@@ -64,7 +64,10 @@ Ready to contribute? Here's how to set up `jsonfield_validation` for local devel
 
     $ git clone git@github.com:your_name_here/jsonfield_validation.git
 
-3. Install your local copy into a virtualenv. Assuming you have tox_ installed, this is how you set up your fork for local development::
+3. If you're using asdf_, run ``asdf install`` to install the Pythons listed in ``.tool-versions``.
+   Add the asdf-python_ plugin if you don't have it already.
+
+4. Install your local copy into a virtualenv. Assuming you have tox_ installed, this is how you set up your fork for local development::
 
     $ make develop
 
@@ -79,6 +82,8 @@ Ready to contribute? Here's how to set up `jsonfield_validation` for local devel
     $ python -m pip install -r requirements_dev.txt
 
 
+.. _asdf: https://asdf-vm.com/
+.. _asdf-python: https://github.com/danhper/asdf-python
 .. _tox: https://tox.wiki/en/latest/index.html
 .. _virtualenvwrapper: https://virtualenvwrapper.readthedocs.io/en/latest/
 
@@ -96,7 +101,9 @@ Ready to contribute? Here's how to set up `jsonfield_validation` for local devel
     $ make test
     $ tox
 
-   To get flake8 and tox, just pip install them into your virtualenv.
+   To get flake8 and tox, just pip install them into your virtualenv. Check ``tox.ini``
+   for the Python versions you'll need available. If you're using asdf_, simply
+   run ``asdf install``.
 
 6. Commit your changes and push your branch to GitHub::
 
