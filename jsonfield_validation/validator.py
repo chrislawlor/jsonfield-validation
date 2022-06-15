@@ -1,5 +1,5 @@
 from collections import defaultdict
-from typing import Dict, Iterable, List, Any
+from typing import Any, Dict, Iterable, List, Optional
 
 from django.core.exceptions import ImproperlyConfigured, ValidationError
 from django.utils.deconstruct import deconstructible
@@ -21,6 +21,8 @@ class JsonSchemaValidator:
     Validates against a given JSON Schema.
     """
 
+    nested_item_delimiter = "."
+
     def __init__(self, schema: Dict):
         self.validator = validator_for(schema)(schema)
         try:
@@ -30,22 +32,35 @@ class JsonSchemaValidator:
         self.schema = schema
 
     def __call__(self, value):
-        errors = []
-        for error in sorted(self.validator.iter_errors(value), key=str):
-            errors.append(error)
-        if errors:
+        errors = self.check(value)
+        if errors is not None:
             # Field.run_validators doesn't work with dict-based ValidationErrors,
             # so we set error_list as the list of errors, but also set
             # error_dict explicitly.
             # See https://code.djangoproject.com/ticket/29318
-            error_dict = self._errors_to_dict(errors)
-            ve = ValidationError(list(error_dict.values()))
-            ve.error_dict = error_dict
+            ve = ValidationError(list(errors.values()))
+            ve.error_dict = errors
             raise ve
+
+    def check(self, value) -> Optional[Dict]:
+        """
+        Check value against the schema without raising an exception.
+
+        If there are errors, they are returned as a dictionary. If the
+        value is a JSON object, errors are keyed by the path through to
+        the errant attribute.
+        """
+        errors = []
+        for error in sorted(self.validator.iter_errors(value), key=str):
+            errors.append(error)
+        if errors:
+            return self._errors_to_dict(errors)
+        return None
 
     @classmethod
     def _errors_to_dict(
-        cls, error_list: Iterable[SchemaValidationError], nested_item_delimiter="."
+        cls,
+        error_list: Iterable[SchemaValidationError],
     ) -> Dict[str, List[str]]:
         """
         Convert a list of jsonschema ValidationError to a dictionary.
@@ -59,7 +74,7 @@ class JsonSchemaValidator:
         """
         errors = defaultdict(list)
         for ve in error_list:
-            key = nested_item_delimiter.join(cls._stringify_path_elements(ve.path))
+            key = cls.nested_item_delimiter.join(cls._stringify_path_elements(ve.path))
             key = key or "__non_field_errors__"
             errors[key].append(ve.message)
         return errors
